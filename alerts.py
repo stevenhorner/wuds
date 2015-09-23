@@ -27,3 +27,12 @@ def alert_pushover(**kwargs):
     payload = {'token': PUSHOVER_API_KEY, 'user': PUSHOVER_USER_KEY, 'message': msg}
     payload = urllib.urlencode(payload)
     resp = urllib2.urlopen(url, data=payload)
+
+def alert_pushbullet(**kwargs):
+    msg = 'Proximity alert! A foreign device (%s - %s) has been detected on the premises.' % (kwargs['bssid'], kwargs['oui'])
+    title = 'Proximity Alert'
+    url = 'https://api.pushbullet.com/api/pushes'
+    headers = { 'Access-Token' : PUSHBULLET_API_KEY, 'Content-Type': 'application/json' }
+    payload = {'Access-Token': PUSHBULLET_API_KEY, 'device_iden': DEVICE_IDEN, 'type': 'note', 'title': title, 'body': msg}
+    payload = urllib.urlencode(payload)
+    resp = urllib2.urlopen(url, data=payload, headers)

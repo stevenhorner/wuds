@@ -49,6 +49,7 @@ DEBUG = True
 # (BOOL) Enable/Disable alert modules
 ALERT_SMS = True
 ALERT_PUSHOVER = True
+ALERT_PUSHBULLET = True
 
 #==================
 # ALERT_SMS CONFIG
@@ -71,3 +72,11 @@ SMS_EMAIL = ''
 # (STR) API and User keys from pushover.net
 PUSHOVER_API_KEY = ''
 PUSHOVER_USER_KEY = ''
+
+#=======================
+# ALERT_PUSHBULLET CONFIG
+#=======================
+
+# (STR) API and Device iden from pushbullet.com. Leave DEVICE.IDEN blank to send to all devices
+PUSHBULLET_API_KEY = ''
+PUSHBULLET_DEVICE_IDEN = ''

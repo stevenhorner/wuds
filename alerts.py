@@ -33,6 +33,6 @@ def alert_pushbullet(**kwargs):
     title = 'Proximity Alert'
     url = 'https://api.pushbullet.com/api/pushes'
     headers = { 'Access-Token' : PUSHBULLET_API_KEY, 'Content-Type': 'application/json' }
-    payload = {'Access-Token': PUSHBULLET_API_KEY, 'device_iden': DEVICE_IDEN, 'type': 'note', 'title': title, 'body': msg}
+    payload = {'Access-Token': PUSHBULLET_API_KEY, 'device_iden': PUSHBULLET_DEVICE_IDEN, 'type': 'note', 'title': title, 'body': msg}
     payload = urllib.urlencode(payload)
     resp = urllib2.urlopen(url, data=payload, headers)

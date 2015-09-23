@@ -14,7 +14,7 @@ sudo apt-get install iw python-pcapy sqlite3 screen
 # lauch a screen session
 screen
 # install WUDS
-git clone https://LaNMaSteR53@bitbucket.org/LaNMaSteR53/wuds.git
+git clone https://github.com/stevenhorner/wuds.git
 cd wuds
 # edit the config file
 vim config.py

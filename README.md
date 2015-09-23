@@ -17,7 +17,7 @@ screen
 git clone https://github.com/stevenhorner/wuds.git
 cd wuds
 # edit the config file
-vim config.py
+nano config.py
 # execute the included run script
 ./run.sh
 # Ctrl+A, D detaches from the screen session

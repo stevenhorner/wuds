@@ -80,3 +80,10 @@ PUSHOVER_USER_KEY = ''
 # (STR) API and Device iden from pushbullet.com. Leave DEVICE.IDEN blank to send to all devices
 PUSHBULLET_API_KEY = ''
 PUSHBULLET_DEVICE_IDEN = ''
+
+#=======================
+# URL_LOGGING CONFIG
+#=======================
+
+# (STR) URL to send detected devices to
+URL_LOGGING_SITE = ''

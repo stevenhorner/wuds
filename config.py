@@ -50,6 +50,7 @@ DEBUG = True
 ALERT_SMS = True
 ALERT_PUSHOVER = True
 ALERT_PUSHBULLET = True
+ALERT_URL_LOGGING = True
 
 #==================
 # ALERT_SMS CONFIG

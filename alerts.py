@@ -35,4 +35,4 @@ def alert_pushbullet(**kwargs):
     headers = { 'Access-Token' : PUSHBULLET_API_KEY, 'Content-Type': 'application/json' }
     payload = {'device_iden': PUSHBULLET_DEVICE_IDEN, 'type': 'note', 'title': title, 'body': msg}
     payload = urllib.urlencode(payload)
-    resp = urllib2.urlopen(url, data=payload, headers)
+

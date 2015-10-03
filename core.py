@@ -51,8 +51,8 @@ def log_probe(bssid, rssi, essid):
     oui = resolve_oui(bssid)
     log(1, (bssid, rssi, essid, oui))
 
-def log_nodered(bssid, rssi, essid):
-    print ("Time: %s BSSID: %s RSSI: %s ESSI: %s " % (timestamp, bssid, rssi, essid))
+def log_nodered(timestamp, bssid, rssi, essid):
+    print ("Time: %s BSSID: %s RSSI: %s ESSID: %s " % (timestamp, bssid, rssi, essid))
 
 def is_admin_oui(mac):
     return int(mac.split(':')[0], 16) & 2
@@ -113,7 +113,7 @@ def packet_handler(pkt):
         # build data tuple
         data = (bssid, rssi, essid)
         # call node-red logging and pass values
-        log_nodered(timestamp=str(datetime.now()),bssid=bssid, rssi=rssi, essid=essid)
+        log_nodered(timestamp=datetime.now(),bssid=bssid, rssi=rssi, essid=essid)
         # check whitelist for probing mac address
         foreign = False
         if bssid not in MAC_LIST:

@@ -51,6 +51,9 @@ def log_probe(bssid, rssi, essid):
     oui = resolve_oui(bssid)
     log(1, (bssid, rssi, essid, oui))
 
+def log_nodered(bssid, rssi, essid):
+    print ("BSSID: %s RSSI: %s ESSI: %s " % (bssid, rssi, essid))
+
 def is_admin_oui(mac):
     return int(mac.split(':')[0], 16) & 2
 

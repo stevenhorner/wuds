@@ -42,7 +42,7 @@ def log(log_type, values):
     query = 'INSERT INTO %s VALUES (%s)' % (LOG_TYPES[log_type], values_str)
     cur.execute(query, values)
     conn.commit()
-    urllib2.urlopen(URL_LOGGING_SITE % (bssid, rssi, essid, oui))
+    #urllib2.urlopen(URL_LOGGING_SITE % (bssid, rssi, essid, oui))
 
 def log_message(level, message):
     log(0, (MESSAGE_LEVELS[level], message))
@@ -52,7 +52,7 @@ def log_probe(bssid, rssi, essid):
     log(1, (bssid, rssi, essid, oui))
 
 def log_nodered(bssid, rssi, essid):
-    print ("BSSID: %s RSSI: %s ESSI: %s " % (bssid, rssi, essid))
+    print ("Time: %s BSSID: %s RSSI: %s ESSI: %s " % (timestamp, bssid, rssi, essid))
 
 def is_admin_oui(mac):
     return int(mac.split(':')[0], 16) & 2
@@ -113,7 +113,7 @@ def packet_handler(pkt):
         # build data tuple
         data = (bssid, rssi, essid)
         # call node-red logging and pass values
-        log_nodered(bssid=bssid, rssi=rssi, essid=essid)
+        log_nodered(timestamp=str(datetime.now()),bssid=bssid, rssi=rssi, essid=essid)
         # check whitelist for probing mac address
         foreign = False
         if bssid not in MAC_LIST:

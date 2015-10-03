@@ -112,6 +112,8 @@ def packet_handler(pkt):
         essid = frame[26:26+ord(frame[25])] if ord(frame[25]) > 0 else '<None>'
         # build data tuple
         data = (bssid, rssi, essid)
+        # call node-red logging and pass values
+        log_nodered(bssid=bssid, rssi=rssi, essid=essid)
         # check whitelist for probing mac address
         foreign = False
         if bssid not in MAC_LIST:

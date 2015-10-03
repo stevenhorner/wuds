@@ -42,8 +42,7 @@ def log(log_type, values):
     query = 'INSERT INTO %s VALUES (%s)' % (LOG_TYPES[log_type], values_str)
     cur.execute(query, values)
     conn.commit()
-    #urllib2.urlopen(URL_LOGGING_SITE % (bssid, rssi, essid, oui))
-
+    
 def log_message(level, message):
     log(0, (MESSAGE_LEVELS[level], message))
 
@@ -53,7 +52,7 @@ def log_probe(bssid, rssi, essid):
 
 def log_nodered(timestamp, bssid, rssi, essid):
     print ("Time: %s BSSID: %s RSSI: %s ESSID: %s " % (timestamp, bssid, rssi, essid))
-    urllib2.urlopen(URL_LOGGING_SITE % (bssid, rssi, essid, oui))
+    res = urllib2.urlopen(URL_LOGGING_SITE % (bssid, rssi, essid))
 
 def is_admin_oui(mac):
     return int(mac.split(':')[0], 16) & 2

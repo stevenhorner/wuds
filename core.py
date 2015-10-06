@@ -52,7 +52,7 @@ def log_probe(bssid, rssi, essid):
 
 def log_nodered(timestamp, bssid, rssi, essid):
     print ("Time: %s BSSID: %s RSSI: %s ESSID: %s " % (timestamp, bssid, rssi, essid))
-    print URL_LOGGING_SITE % (bssid, rssi, essid)
+    # print URL_LOGGING_SITE % (bssid, rssi, essid)
     node_red_url = URL_LOGGING_SITE % (bssid, rssi, essid.replace(" ", "%20"))
     res = urllib2.urlopen(URL_LOGGING_SITE % (node_red_url))
 

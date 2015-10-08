@@ -53,7 +53,7 @@ def log_probe(bssid, rssi, essid):
 def log_nodered(timestamp, bssid, rssi, essid):
     print ("Time: %s BSSID: %s RSSI: %s ESSID: %s " % (timestamp, bssid, rssi, essid))
     # print URL_LOGGING_SITE % (bssid, rssi, essid)
-    node_red_url = URL_LOGGING_SITE % (bssid, rssi, essid.replace(" ", "%20"))
+    node_red_url = URL_LOGGING_SITE % (bssid, rssi, essid.replace(" ", "%20"), WUDS_NAME)
     res = urllib2.urlopen(node_red_url)
 
 def is_admin_oui(mac):

@@ -12,7 +12,7 @@ MAC_LIST = [
     'xx:xx:xx:xx:xx:xx',
     ]
 # (STR) Name of this device WUDS is running on. To identify when multiple devices deployed.
-WUDS_NAME= ''
+WUDS_NAME = ''
 
 # (STR) Vendor name to report for probes from Local Admin MAC addresses
 ADMIN_OUI = 'Admin OUI'

@@ -89,4 +89,4 @@ PUSHBULLET_DEVICE_IDEN = ''
 #=======================
 
 # (STR) URL to send detected devices to
-URL_LOGGING_SITE = 'http://ipaddress:port/wifi?bssid=%s&rssi=%s&essid=%s'
+URL_LOGGING_SITE = 'http://ipaddress:port/wifi?bssid=%s&rssi=%s&essid=%s&wuds=%s'

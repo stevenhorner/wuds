@@ -1,5 +1,7 @@
 # WUDS: Wi-Fi User Detection System
 
+This is a modified version of WUDS which adds the ability to send all detected wireless devices to a URL. Initially aimed at Node-Red but could be used for anything.
+
 WUDS is a proximity detection system that uses Wi-Fi probe requests, signal strength, and a white list of MAC addresses to create a detection barrier and identify the presence of foreign devices within a protected zone. Designed with the Raspberry Pi in mind, WUDS can be installed and configured on any system with Python 2.x and a wireless card capable of Monitor mode. See [http://www.lanmaster53.com/2014/10/wifi-user-detection-system/](http://www.lanmaster53.com/2014/10/wifi-user-detection-system/) for more information.
 
 ## Setup
